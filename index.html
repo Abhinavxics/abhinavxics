@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Chaurasia | Full-Stack Developer</title>
+    <meta name="description" content="Abhinav Chaurasia - Full-Stack Developer Portfolio">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: '#E6F7FF',
+                            200: '#BAE7FF',
+                            300: '#91D5FF',
+                            400: '#69C0FF',
+                            500: '#40A9FF',
+                            600: '#1890FF',
+                            700: '#096DD9',
+                            800: '#0050B3',
+                            900: '#003A8C',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white dark:bg-gray-900 z-50 shadow-sm transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                <span class="text-gray-800 dark:text-white">Abhinav</span>Chaurasia
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fa-solid fa-sun text-yellow-500 dark:hidden"></i>
+                    <i class="fa-solid fa-moon text-blue-300 hidden dark:block"></i>
+                </button>
+
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button id="mobileMenuToggle" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <i class="fa-solid fa-bars text-gray-800 dark:text-white"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white dark:bg-gray-900 shadow-md hidden transition-all duration-300">
+            <ul class="py-2">
+                <li><a href="#about" class="block py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800">About</a></li>
+                <li><a href="#projects" class="block py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a></li>
+                <li><a href="#skills" class="block py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a></li>
+                <li><a href="#experience" class="block py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800">Experience</a></li>
+                <li><a href="#contact" class="block py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-16">
+            <div class="container mx-auto px-4 py-16 md:py-32">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/2">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                            <span class="block">Hi, I'm</span>
+                            <span class="text-primary-600 dark:text-primary-400">Abhinav Chaurasia</span>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">Full-Stack Developer</h2>
+                        <p class="text-lg mb-8 leading-relaxed">
+                            I build responsive, user-friendly web applications with modern technologies. 
+                            Based in Lucknow, I'm passionate about creating elegant solutions to complex problems.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="btn-primary">
+                                <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+                            </a>
+                            <a href="#projects" class="btn-secondary">
+                                <i class="fa-solid fa-code mr-2"></i> View My Work
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="hero-image-container rounded-full bg-gradient-to-br from-primary-500 to-primary-700 p-1">
+                            <div class="hero-image bg-white dark:bg-gray-900 rounded-full flex justify-center items-center">
+                                <i class="fa-solid fa-code text-6xl md:text-8xl text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">About Me</h2>
+                <div class="flex flex-col md:flex-row gap-12 mt-12">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4">Who am I?</h3>
+                        <p class="mb-4 leading-relaxed">
+                            I'm Abhinav Chaurasia, an 18-year-old full-stack developer from Lucknow, India. I specialize in creating 
+                            responsive, user-friendly web applications using modern technologies.
+                        </p>
+                        <p class="mb-4 leading-relaxed">
+                            My journey into web development began when I was 15, and I've been passionate about building for the web ever since. 
+                            I enjoy the process of turning complex problems into elegant, efficient solutions.
+                        </p>
+                        <p class="leading-relaxed">
+                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+                            or reading about software architecture and design patterns.
+                        </p>
+                        
+                        <div class="mt-6 flex gap-4">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="mailto:contact@example.com" class="social-btn">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="info-card">
+                                <h4 class="text-lg font-semibold mb-2">Education</h4>
+                                <p>Computer Science Student</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">2021 - Present</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 class="text-lg font-semibold mb-2">Location</h4>
+                                <p>Lucknow, India</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Open to Remote Work</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 class="text-lg font-semibold mb-2">Interests</h4>
+                                <p>Web Development, UI/UX Design</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Open Source, New Technologies</p>
+                            </div>
+                            <div class="info-card">
+                                <h4 class="text-lg font-semibold mb-2">Languages</h4>
+                                <p>English (Fluent)</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Hindi (Native)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">
+                    Here are some of the projects I've worked on recently. Each demonstrates different skills and technologies.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Project 1 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-store text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A full-stack e-commerce platform with user authentication, product catalog, cart functionality, and payment integration.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-tasks text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A collaborative task management application with real-time updates, task assignments, and progress tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Socket.IO</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-chart-line text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                An interactive analytics dashboard with data visualization, filtering options, and report generation.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-comment-dots text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">Chat Application</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A real-time chat application with private messaging, group chats, and file sharing capabilities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">WebSockets</span>
+                                <span class="tech-tag">Material UI</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-calendar-alt text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">Appointment Scheduler</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                An appointment scheduling system with calendar integration, email notifications, and recurring events.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Prisma</span>
+                                <span class="tech-tag">SendGrid</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card group">
+                        <div class="project-image bg-primary-100 dark:bg-primary-900">
+                            <i class="fa-solid fa-blog text-5xl text-primary-600 dark:text-primary-400"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="text-xl font-bold mb-2">Blog Platform</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                A blogging platform with rich text editing, commenting system, and social media sharing.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tech-tag">Gatsby</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">Markdown</span>
+                                <span class="tech-tag">Netlify CMS</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-solid fa-link mr-1"></i> Live Demo
+                                </a>
+                                <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">
+                                    <i class="fa-brands fa-github mr-1"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">
+                    I work with a range of technologies across the full stack. Here's an overview of my technical skills.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Frontend Skills -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-code text-3xl mr-3 text-primary-600 dark:text-primary-400"></i>
+                            <h3 class="text-xl font-bold">Frontend</h3>
+                        </div>
+                        <div class="skills-card-body">
+                            <div class="skill-item">
+                                <span>HTML & CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>React.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Next.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Tailwind CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>TypeScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-server text-3xl mr-3 text-primary-600 dark:text-primary-400"></i>
+                            <h3 class="text-xl font-bold">Backend</h3>
+                        </div>
+                        <div class="skills-card-body">
+                            <div class="skill-item">
+                                <span>Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Express.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>MongoDB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>MySQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>GraphQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Firebase</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools & Others -->
+                    <div class="skills-card">
+                        <div class="skills-card-header">
+                            <i class="fa-solid fa-toolbox text-3xl mr-3 text-primary-600 dark:text-primary-400"></i>
+                            <h3 class="text-xl font-bold">Tools & Others</h3>
+                        </div>
+                        <div class="skills-card-body">
+                            <div class="skill-item">
+                                <span>Git & GitHub</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Responsive Design</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>RESTful APIs</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Testing (Jest, React Testing Library)</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>Agile / Scrum</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span>CI/CD</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">
+                    My professional journey and work experience in the field of web development.
+                </p>
+                
+                <div class="timeline mt-12">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2023 - Present</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold">Freelance Full-Stack Developer</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Independent Projects</p>
+                            <p class="mb-3">
+                                Working with clients to build custom web applications, focusing on responsive design and user experience.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                                <li>Developed e-commerce solutions for small businesses</li>
+                                <li>Created content management systems with custom admin panels</li>
+                                <li>Integrated third-party APIs and payment gateways</li>
+                                <li>Maintained and updated existing web applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2022 - 2023</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold">Junior Web Developer</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">TechSolutions Inc.</p>
+                            <p class="mb-3">
+                                Collaborated with a team of developers to build and maintain web applications for various clients.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                                <li>Implemented responsive UI components using React and Tailwind CSS</li>
+                                <li>Developed backend APIs using Node.js and Express</li>
+                                <li>Participated in code reviews and implemented feedback</li>
+                                <li>Worked in an Agile environment with two-week sprints</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2021 - 2022</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold">Web Development Intern</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">Digital Innovators</p>
+                            <p class="mb-3">
+                                Gained hands-on experience in web development while supporting senior developers.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                                <li>Assisted in the development of landing pages and microsites</li>
+                                <li>Learned modern JavaScript frameworks and best practices</li>
+                                <li>Contributed to UI/UX improvements based on user feedback</li>
+                                <li>Participated in team meetings and brainstorming sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">
+                            <span>2020 - 2021</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold">Student Developer</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">College Projects</p>
+                            <p class="mb-3">
+                                Worked on various academic and personal projects to build my skills in web development.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                                <li>Built a student management system for the computer science department</li>
+                                <li>Developed a personal blog using static site generators</li>
+                                <li>Created small utility applications to solve everyday problems</li>
+                                <li>Participated in coding competitions and hackathons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Feel free to reach out if you have any questions or would like to work together.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-8 mt-12">
+                    <div class="md:w-1/2">
+                        <form class="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block mb-2 text-gray-700 dark:text-gray-300">Your Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    placeholder="John Doe"
+                                    required
+                                >
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2 text-gray-700 dark:text-gray-300">Your Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    placeholder="john@example.com"
+                                    required
+                                >
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block mb-2 text-gray-700 dark:text-gray-300">Subject</label>
+                                <input 
+                                    type="text" 
+                                    id="subject" 
+                                    class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    placeholder="Project Inquiry"
+                                    required
+                                >
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block mb-2 text-gray-700 dark:text-gray-300">Your Message</label>
+                                <textarea 
+                                    id="message" 
+                                    rows="5" 
+                                    class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    placeholder="How can I help you?"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md h-full">
+                            <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                            <p class="mb-6">
+                                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-envelope text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Email</h4>
+                                        <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                                            contact@example.com
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Location</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Lucknow, Uttar Pradesh, India</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-clock text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Working Hours</h4>
+                                        <p class="text-gray-600 dark:text-gray-400">Monday - Friday: 9 AM - 6 PM IST</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-medium mb-3">Connect with me</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-btn-large">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn-large">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn-large">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-btn-large">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#hero" class="text-2xl font-bold text-white">
+                        <span class="text-primary-400">Abhinav</span>Chaurasia
+                    </a>
+                    <p class="mt-2 text-gray-400">Full-Stack Developer</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-4 md:mb-0">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="mailto:contact@example.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500">
+                <p>&copy; 2023 Abhinav Chaurasia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary-600 dark:bg-primary-700 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/darkMode.js"></script>
+</body>
+</html>
