@@ -89,8 +89,8 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center pt-16">
-            <div class="container mx-auto px-4 py-16 md:py-32">
+        <section id="hero" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+            <div class="container mx-auto px-4 py-16 md:py-32 relative z-10">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                     <div class="md:w-1/2">
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -112,9 +112,20 @@
                         </div>
                     </div>
                     <div class="md:w-1/2 flex justify-center">
-                        <div class="hero-image-container rounded-full bg-gradient-to-br from-primary-500 to-primary-700 p-1">
-                            <div class="hero-image bg-white dark:bg-gray-900 rounded-full flex justify-center items-center">
-                                <i class="fa-solid fa-code text-6xl md:text-8xl text-primary-600 dark:text-primary-400"></i>
+                        <div class="hero-image-container rounded-full bg-gradient-to-br from-primary-500 to-primary-700 p-1 animate-pulse-glow">
+                            <div class="hero-image bg-white dark:bg-gray-900 animate-morph flex justify-center items-center">
+                                <div class="animate-float">
+                                    <i class="fa-solid fa-code text-6xl md:text-8xl text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <!-- Floating particles -->
+                                <div class="hero-particles">
+                                    <span class="particle particle-1 fa-solid fa-square-root-variable"></span>
+                                    <span class="particle particle-2 fa-solid fa-database"></span>
+                                    <span class="particle particle-3 fa-brands fa-react"></span>
+                                    <span class="particle particle-4 fa-solid fa-terminal"></span>
+                                    <span class="particle particle-5 fa-solid fa-code-branch"></span>
+                                    <span class="particle particle-6 fa-brands fa-js"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -195,6 +206,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-store text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
@@ -222,6 +234,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-tasks text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">Task Management App</h3>
@@ -249,6 +262,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-chart-line text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
@@ -276,6 +290,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-comment-dots text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">Chat Application</h3>
@@ -303,6 +318,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-calendar-alt text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">Appointment Scheduler</h3>
@@ -330,6 +346,7 @@
                     <div class="project-card group">
                         <div class="project-image bg-primary-100 dark:bg-primary-900">
                             <i class="fa-solid fa-blog text-5xl text-primary-600 dark:text-primary-400"></i>
+                            <div class="particle-dots"></div>
                         </div>
                         <div class="project-content">
                             <h3 class="text-xl font-bold mb-2">Blog Platform</h3>
@@ -763,12 +780,13 @@
     </footer>
 
     <!-- Scroll to top button -->
-    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary-600 dark:bg-primary-700 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary-600 dark:bg-primary-700 text-white p-3 rounded-full shadow-lg">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- Custom Scripts -->
     <script src="js/main.js"></script>
     <script src="js/darkMode.js"></script>
+    <script src="js/particles.js"></script>
 </body>
 </html>
