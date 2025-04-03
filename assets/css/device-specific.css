@@ -1,0 +1,21 @@
+/* Device-specific styles */
+
+/* Hide elements on mobile devices */
+@media screen and (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* The existing Android-specific styles can remain for compatibility */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .hide-on-android {
+    display: none !important;
+  }
+}
+
+@supports (-webkit-touch-callout: none) and (not (hover: hover)) and (max-width: 767px) {
+  .hide-on-android {
+    display: none !important;
+  }
+}
