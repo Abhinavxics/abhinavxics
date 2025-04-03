@@ -37,4 +37,4 @@ Feel free to reach out at Abhinavchaurasia032@gmail.com
 
 ## License
 
-Copyright © 2023 Abhinav Chaurasia. All Rights Reserved.
+Copyright © 2025 Abhinav Chaurasia. All Rights Reserved.
